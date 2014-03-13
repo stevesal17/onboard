@@ -1,7 +1,7 @@
 class Room < ActiveRecord::Base
 
 	# add relationships between other models
-
+	belongs_to :user
 
 
 	# validate certain things

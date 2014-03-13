@@ -2,6 +2,7 @@ Onboard::Application.routes.draw do
   # set up the index, show, new, create, edit, update, destroy for rooms
   resources :rooms#, path: “places” ----if I wanted to change this easily to places inthe url
 
+  resources :users
 
   # so what is the homepage?
   root "rooms#index"
