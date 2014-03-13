@@ -58,6 +58,8 @@ gem "omniauth-twitter"
 gem "omniauth-linkedin"
 gem "activeadmin", github: "gregbell/active_admin"
 
+# adding this for styles
+gem "foundation-rails"
 
 
 
