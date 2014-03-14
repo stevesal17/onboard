@@ -1,8 +1,13 @@
 Onboard::Application.routes.draw do
   # set up the index, show, new, create, edit, update, destroy for rooms
-  resources :rooms#, path: “places” ----if I wanted to change this easily to places inthe url
+  resources :rooms #, path: “places” ----if I wanted to change this easily to places inthe url
 
   resources :users
+
+  # lets have a log in and log out section to our site
+  # this is a singular resource because as a user
+  # we only ever are logged in once NOT multiple times
+  resource :session
 
   # so what is the homepage?
   root "rooms#index"

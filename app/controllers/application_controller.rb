@@ -25,6 +25,15 @@ class ApplicationController < ActionController::Base
   	
   end
 
+  def make_sure_logged_in
+    # if i'm not logged in, redirect me to the log in page
+    if not logged_in?
+      flash[:error] = "You must be logged in to see that page"
+      redirect_to new_session_path
+    end
+
+  end
+
 
 
 end
