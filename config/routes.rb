@@ -1,6 +1,20 @@
 Onboard::Application.routes.draw do
+  
   # set up the index, show, new, create, edit, update, destroy for rooms
-  resources :rooms #, path: “places” ----if I wanted to change this easily to places inthe url
+  resources :rooms do
+  #resources :rooms, path: “places” ----if I wanted to change this easily to places inthe url
+  # because i'm placing orders onto room
+  # this is a nested resource
+    resources :orders, only: [:new, :create]
+  end
+
+  # another section to my site,
+  # that is the index and show orders pages
+  # new and create are in the nested resources above as
+  # they rely on the room
+  resources :orders, only: [:index, :show]
+
+
 
   resources :users
 

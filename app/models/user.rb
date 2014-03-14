@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	# releationships
 	has_many :rooms
+	has_many :orders
 
 
 	# validations

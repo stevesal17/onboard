@@ -2,6 +2,7 @@ class Room < ActiveRecord::Base
 
 	# add relationships between other models
 	belongs_to :user
+	has_many :orders
 
 
 	# validate certain things
