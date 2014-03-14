@@ -2,8 +2,16 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
+
+# add in minitest and capybara to our test site
+require "minitest/rails"
+require "capybara/rails"
+
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
+
+  # i want to add in the routes from config/routes.rb
+  include Capybara::DSL
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   #
