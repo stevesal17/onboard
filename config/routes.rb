@@ -1,5 +1,10 @@
 Onboard::Application.routes.draw do
   
+  
+  # get "about" => "contents#about"
+  get "auth/:provider/callback" => "social_logins#create"
+
+
   # set up the index, show, new, create, edit, update, destroy for rooms
   resources :rooms do
   #resources :rooms, path: “places” ----if I wanted to change this easily to places inthe url

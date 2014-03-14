@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
 
 	# validations
-	validates :name, presence: true
-	validates :email, presence: true, uniqueness: true
-	validates :username, presence: true, uniqueness: true
+	validates :name, presence: true, if: -> { self.provider.nil? }
+	validates :email, presence: true, uniqueness: true, if: -> { self.provider.nil? }
+	validates :username, presence: true, uniqueness: true, if: -> { self.provider.nil? }
 
 	# gems
 	has_secure_password
